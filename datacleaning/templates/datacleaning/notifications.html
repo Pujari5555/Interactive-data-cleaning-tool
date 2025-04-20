@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .notification {
+            background-color: #444;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Your Notifications</h1>
+
+{% for notification in notifications %}
+    <div class="notification">
+        {{ notification.message }} 
+    </div>
+{% empty %}
+    <p>No new notifications</p>
+{% endfor %}
+
+</body>
+</html>

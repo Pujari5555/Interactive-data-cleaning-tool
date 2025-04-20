@@ -1,0 +1,385 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow-y: auto; */
+}
+
+.container {
+    background-color: rgb(45, 41, 41);
+    width: 90%;
+    max-width: 1300px;
+    padding: 20px;
+    border-radius: 12px;
+    /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); */
+    display: block;
+    height: 100%; /* Ensure the container is flexible in height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Header */
+h1, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Form Styling */
+form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+    font-size: 14px;
+}
+
+select:focus, input[type="text"]:focus {
+    border-color: rgb(86, 195, 200);
+    outline: none;
+}
+    
+
+button {
+    padding: 10px 20px;
+    background-color: rgb(86, 195, 200);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: rgb(66, 155, 160);
+}
+
+/* Dynamic Form Elements */
+#custom-value-input {
+    display: none;
+    margin-bottom: 20px;
+}
+/* File Input */
+#fileInput {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid rgb(86, 195, 200);
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(86, 195, 200);
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+#fileInput:hover {
+    background-color: rgb(86, 195, 200);
+    color: #fff;
+}
+
+/* File Data Container */
+#fileDataContainer {
+    width: 100%;
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+button:hover {
+    background-color: rgb(86, 195, 200);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+}
+
+/* Header Row */
+th {
+    background-color: rgb(86, 195, 200);
+    color: white;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+/* Table Rows */
+tr {
+    background-color: black;
+    color: white;
+}
+
+tr:hover {
+    background-color: rgb(86, 195, 200);
+    color: black;
+}
+
+td.updated-row, td.previewed-row, td.duplicated-row {
+    background-color: black;
+    color: white;
+}
+
+tr.updated-row:hover, tr.previewed-row:hover, tr.duplicated-row:hover {
+    background-color: rgb(86, 195, 200);
+    color: black;
+}
+
+#validateButton{
+    background-color: rgb(86, 195, 200);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    margin-top: 20px;
+    width: 200px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block !important;
+
+}
+/* Validation Results */
+#validationResults {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 1px solid #ccc;
+    max-height: 300px;
+    overflow-y: auto;
+    visibility: hidden;
+    color: white;
+}
+
+#validationResults ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#validationResults li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Missing Data Options */
+#missingDataOptions {
+    margin-top: 25px;
+    display: block !important;
+}
+
+#missingDataOptions h3 {
+    margin-bottom: 15px;
+}
+
+#missingDataOptions select,
+#missingDataOptions input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Apply Missing Data Button */
+#applyMissingData {
+    background-color: rgb(86, 195, 200);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    margin-top: 20px;
+    width: 200px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block !important;
+    
+}
+
+#applyMissingData:hover {
+    background-color: rgb(86, 195, 200);
+}
+
+/* Custom Input Styles for Missing Columns */
+#missingColumnsContainer input {
+    margin: 10px 0;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#missingColumnsContainer label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #fileDataContainer {
+        height: 400px;
+    }
+
+    table th, table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    #fileInput {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #fileDataContainer {
+        height: 300px;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    #fileInput {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+}
+
+/* Styling for the removeDuplicatesOptions container */
+#removeDuplicatesOptions {
+    background-color: rgb(86, 195, 200);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#removeDuplicatesOptions h3 {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+#removeDuplicatesBtn {
+    background-color: white;
+    color: rgb(86, 195, 200);
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-left:370px ;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    width: 200px;
+    text-align: center;
+}
+
+#removeDuplicatesBtn:hover {
+    background-color: rgb(86, 195, 200);
+    color: white;
+}
+
+#updatedDataDuplicates {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #removeDuplicatesOptions {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Download CSV Button */
+#downloadCSVButton {
+    background-color: rgb(86, 195, 200);
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    width: 200px;
+    text-align: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#downloadCSVButton:hover {
+    background-color: white;
+    color:rgb(86, 195, 200)
+}

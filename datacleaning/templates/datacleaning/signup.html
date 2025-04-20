@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: rgb(86, 195, 200);
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: black;
+            padding: 5px;
+            text-align: center;
+        }
+        .navbar img {
+            height: 80px;
+        }
+        h1, label, a {
+            color: rgb(86, 195, 200);
+        }
+        input {
+            background-color: black;
+            border: 1px solid rgb(86, 195, 200);
+            color: rgb(86, 195, 200);
+        }
+        input::placeholder {
+            color: rgba(86, 195, 200, 0.7);
+        }
+        button {
+            background-color: rgb(86, 195, 200);
+            border: none;
+            color: black;
+            font-weight: bold;
+            width: 100%;
+            height: 45px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+        }
+        .alert {
+            font-size: 16px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with logo -->
+    <div class="navbar">
+        <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+    </div>
+
+    <!-- Signup Form -->
+    <div class="container mt-5">
+        <h1 class="text-center">Signup</h1>
+        
+        <!-- Django Messages Block -->
+        {% if messages %}
+            <div class="mt-3">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} text-center" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <div class="form-container">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Signup</button>
+            </form>
+            <p class="mt-3 text-center">Already have an account? <a href="/login/">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>

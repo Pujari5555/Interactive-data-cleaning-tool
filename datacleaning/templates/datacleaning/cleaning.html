@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload and Data Cleaning</title>
+    <link rel="stylesheet" href="{% static 'datacleaning/styles.css' %}" type="text/css" charset="utf-8">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload and View CSV File</h1>
+
+        <!-- File Input for Uploading CSV -->
+        <input type="file" id="fileInput" accept=".csv" />
+
+        <!-- Data Preview -->
+        <h3>CSV Data Preview</h3>
+        <div id="fileDataContainer"></div>
+
+        <!-- Validation Button for Data Validation -->
+        <button id="validateButton" style="display:none;">Validate Data</button>
+        <div id="validationResults"></div>
+
+        <!-- Missing Data Handling Section -->
+        <div id="missingDataOptions" style="display:none;">
+            <h3>Handle Missing Data</h3>
+
+            <form id="missingDataForm">
+                <label for="strategy" style="color:white">Choose how to handle missing values:</label>
+                <select id="strategy" name="strategy" required>
+                    <option value="drop_rows">Drop Rows with Missing Values</option>
+                    <option value="fill_custom">Fill with Custom Value</option>
+                </select>
+
+                <!-- Custom Value Input (Hidden by default) -->
+                <div id="custom-value-input" style="display: none;">
+                    <label for="custom_value_input">Enter Custom Value:</label>
+                    <input type="text" id="custom_value_input" placeholder="Enter custom value">
+                </div>
+
+                <div id="missingColumnsContainer" style="display:none;">
+                    <!-- Dynamically created custom value inputs will appear here -->
+                </div>
+
+                <button type="button" id="applyMissingData">Apply</button>
+            </form>
+
+            <h3>Updated Data (After Handling Missing Data)</h3>
+            <div id="updatedDataContainer">
+                <div id="updatedDataMissing"></div>
+            </div>
+        </div>
+        <div id="removeDuplicatesOptions" style="display:none;">
+            <h3>Remove Duplicate Rows</h3>
+            <button id="removeDuplicatesBtn">Remove Duplicates</button>
+
+            <h3>Updated Data (After Removing Duplicates)</h3>
+            <div id="updatedDataContainer">
+                <div id="updatedDataDuplicates"></div>
+            </div>
+        </div>
+        <button id="downloadCSVButton">Download as CSV</button>
+    </div>
+
+    <script src="{% static 'datacleaning/script.js' %}"></script>
+</body>
+</html>
